@@ -1,21 +1,43 @@
-# SigNoz K8s Infra Setup via Ansible
+# K8S SigNoz Infra Monitoring
 
-This repo sets up the Signoz K8s Infra agent to forward telemetry to a SigNoz collector running in Docker (e.g. on TrueNAS).
+## 🛠 Setup Instructions
 
-## Usage
+### Prerequisites
+
+- Kubernetes cluster (tested on vSphere)
+- Helm installed
+- Ansible installed
+- SigNoz running on Docker (collector reachable via host IP)
+
+### 🔼 To Deploy Agent
 
 ```bash
-# Install
-ansible-playbook ansible/up.yaml -i ansible/inventory.yaml
-
-# Uninstall
-ansible-playbook ansible/down.yaml -i ansible/inventory.yaml
+ansible-playbook ansible/up.yaml
 ```
 
-## Customization
+### 🔽 To Uninstall Agent
 
-Edit `helm/values.yaml` to point to your OTEL collector.
+```bash
+ansible-playbook ansible/down.yaml
+```
 
-## Test App
+## 📦 What’s Included
 
-Deploy `manifests/rolldice-deployment.yaml` to test telemetry capture.
+- `up.yaml` and `down.yaml`: Ansible playbooks
+- `values.yaml`: Helm chart override for OTEL collector IP/port
+- `screenshots/`: Add proof of SigNoz monitoring working
+
+## ✅ Tasks Done
+
+- [x] SigNoz collector setup on TrueNAS
+- [x] Installed k8s-infra agent via Ansible
+- [x] Used Helm values to override collector IP
+- [x] Deployed `rolldice` app and verified telemetry
+- [x] Tested on vSphere
+
+## 📸 Screenshots
+
+- SigNoz hosts
+- Metrics showing up
+- Rolldice telemetry
+- vSphere nodes visible
