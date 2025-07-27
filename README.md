@@ -25,8 +25,7 @@ ansible-playbook ansible/down.yaml
 
 - `up.yaml` and `down.yaml`: Ansible playbooks
 - `values.yaml`: Helm chart override for OTEL collector IP/port
-- `screenshots/`: Add proof of SigNoz monitoring working
-
+- `screenshots/`
 ## ✅ Tasks Done
 
 - [x] SigNoz collector setup on TrueNAS
