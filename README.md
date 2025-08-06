@@ -13,7 +13,7 @@
 ### 🔼 To Deploy Agent
 
 ```bash
-ansible-playbook ansible/up.yaml
+ansible-playbook -i ansible/inventory.yaml ansible/up.yaml
 ```
 
 ### 🔽 To Uninstall Agent
